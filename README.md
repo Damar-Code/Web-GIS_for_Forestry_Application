@@ -6,7 +6,7 @@
 ## Project Overview
 A portofolio to showcase Web-GIS development for Forestry Apllication. 
 
-# Please look at the video for details
+## Please look at the video for details!!
 ### Dashboard & Info Bar
 https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/dbb02770-8e0d-417e-85c8-101d95b5cd6e
 
@@ -50,11 +50,3 @@ https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/d
 
 ### Info Bar 
 
-## DASHBOARD UI
-Web-GIS 
-
-
-## MAP FEATURES UI
-
-
-![Web-GIS_002](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/fd8dfa4a-16ee-4ffb-8db5-9a5bcea1ef43)
