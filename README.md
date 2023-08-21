@@ -1,4 +1,8 @@
 # Web-GIS_for_Forestry_Application
 
-https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/b4d9fd4b-c7bd-475d-a516-6f8648e35a1d
+DASHBOARD UI
+https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/dbb02770-8e0d-417e-85c8-101d95b5cd6e
+
+MAP FEATURES UI
+https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/d156e0a6-6cf8-48bc-b246-3535817768dc
 
