@@ -42,10 +42,8 @@ https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/d
    2. Planting Simulation App (Under Development, Not yet published)
       
 ### Interactive Features 
-   1. Search Engine of Layer Attribute
-      - Zoom in to selected 'Farm ID' attribute on Landuse layer
-   3. Basemap Options
-      - There are two Basemap option, Streets and OpenStreetMap from [Map Tiler](https://www.maptiler.com/maps/basic/).
+   1. Search Engine of Layer Attribute: Zoom in to selected 'Farm ID' attribute on Landuse layer
+   3. Basemap Options: There are two Basemap option, Streets and OpenStreetMap from [Map Tiler](https://www.maptiler.com/maps/basic/).
    5. layer activation
    6. Base Layer Options
      
