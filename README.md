@@ -44,8 +44,8 @@ https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/d
 ### Interactive Features 
    1. Search Engine of Layer Attribute: Zoom in to selected 'Farm ID' attribute on Landuse layer
    3. Basemap Options: There are two Basemap option, Streets and OpenStreetMap from [Map Tiler](https://www.maptiler.com/maps/basic/).
-   5. Layer Activation
-   6. Base Layer Options
+   5. Layers Activation: There are two layers toggle switch on-off, landuse & incident
+   6. Base Layer Options: Applied radio button for choosing Map Baselayer (Streets Basemap & OpenStreetMap Basemap)
      
 ### Info Bar 
    1. Scalebar
