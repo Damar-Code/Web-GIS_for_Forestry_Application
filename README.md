@@ -26,18 +26,18 @@ https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/d
 ## Web-GIS Features
 ### Side Bar Content 
 #### BU(Business Unit) Dashboard
-* Cumulative Sum Chart of Montly Harvesting Achievement
-  - Inform the total of monthly harvesting achievement by the bar chart and all at once the monthly cumulative total tonnage by the line chart
-  - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver
-* Landuse Pie Chart
- - Inform theeach total of Landuse categories i.e Plantation, Conservation, and Road.
- - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver.
-* Incident Line Chart
- - Inform the total of monthly Incident cases i.e Fire, Flood, and Fatalities.
- - The value shown is from Incident layer extraction using $.getJSON query of ImageWMS from Geoserver.
-* Bar Chart Rangking of Sector-wise Harvesting Achievement
- - Inform the total yield of sector's harvesting and its ranking compared to the rest of sector.  
- - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver.
+1. Cumulative Sum Chart of Montly Harvesting Achievement
+    - Inform the total of monthly harvesting achievement by the bar chart and all at once the monthly cumulative total tonnage by the line chart
+    - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver
+2. Landuse Pie Chart
+   - Inform theeach total of Landuse categories i.e Plantation, Conservation, and Road.
+   - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver.
+4. Incident Line Chart
+   - Inform the total of monthly Incident cases i.e Fire, Flood, and Fatalities.
+   - The value shown is from Incident layer extraction using $.getJSON query of ImageWMS from Geoserver.
+5. Bar Chart Rangking of Sector-wise Harvesting Achievement
+   - Inform the total yield of sector's harvesting and its ranking compared to the rest of sector.  
+   - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver.
 
 #### Planting Simulation App (Under Development, Not yet published)
       
