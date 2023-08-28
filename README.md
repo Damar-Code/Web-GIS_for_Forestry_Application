@@ -4,7 +4,8 @@
 * [Look at The Video to Know The User Experience](#look-at-the-video-to-know-the-user-experience)
 * [Web-GIS Features](#web-gis-features)
 
-![Web-GIS](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/e7d542b2-aeaf-4852-b261-0201d9fed362)
+
+![Flow Chart_Web-GIS_v2](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/705e13b1-0add-4230-8269-d8339f6bcf4c)
 
 
 ## Project Overview
