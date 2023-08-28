@@ -11,8 +11,7 @@
 ## Project Overview
 A portofolio to showcase Web-GIS development for Forestry Apllication. This Web-GIS are integrated opensource software and scripting lenguages such as QGIS, PostGIS, GeoServer, JavaScript, HTML, & CSS. 
 
-![Flow Chart_Web-GIS_v2](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/5368039c-384f-4e7e-83af-7da57000e790)
-
+![Flow Chart_Web-GIS_v2](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/f874d24d-2ebb-4611-b80a-94dbece1595a)
 
 ### QGIS & PostGIS
 QGIS needed for geospatial data preparation, such as for digitizing, feature styling (.SLD), and store it to Database Management System(PostgreSQL/PostGIS). A proper DBMS like PostGIS provides a structured and optimized way to store and retrieve this data. It allows for efficient querying, indexing, and searching of geospatial information, ensuring quick access to the required data for web applications.
