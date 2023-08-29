@@ -1,7 +1,6 @@
 # Web-GIS_for_Forestry_Application
 ## Table of contents
 * [Project Overview](#project-overview)
-* [Look at The Video to Know The User Experience](#look-at-the-video-to-know-the-user-experience)
 * [Web-GIS Features](#web-gis-features)
 
 ![Web-GIS_v2](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/5e02b8c0-3e77-4fa5-86de-faeccb53da1a)
