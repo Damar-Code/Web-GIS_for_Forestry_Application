@@ -10,7 +10,8 @@
 
 ## Project Overview
 A portofolio to showcase Web-GIS development for Forestry Apllication. This Web-GIS are integrated opensource software and scripting lenguages such as QGIS, PostGIS, GeoServer, JavaScript, HTML, & CSS. 
-![Flow Chart_Web-GIS_v2](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/d49dd2d5-514c-403c-a98b-28c7c69ce926)
+
+![Flow Chart_Web-GIS_v2](https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/12a4e130-7520-40f0-95c5-fd41a3241df5)
 
 
 ### QGIS & PostGIS
