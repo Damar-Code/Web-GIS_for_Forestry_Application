@@ -20,6 +20,10 @@ GeoServer is an open-source server software that allows us to share, process, an
 ### JavaScript and its Libraries
 JavaScript is a crucial programming language in OpenSource Web-GIS development, serving various functions that enhance the interactivity, responsiveness, and user experience of Web-GIS applications. Openlayers Library is used in here for creating interactive map and providing geospatial functionality. Openlayers supports different map projections and provides tools for zooming, panning, and selecting map features. And for data visulization in Dahsboard is using Chart.js library. Chart.js is a widely-used JavaScript library for creating data visualizations, including charts and graphs. While not specifically designed for geospatial data, so we need jQuery library ($.getJSON) to guery each feature's values of the layer. Therefore, Chart.js plays a role in Web-GIS development by allowing to visualize non-spatial data associated with geospatial features.  
 
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
 ## Look at The Video to Know The User Experience
 
 
