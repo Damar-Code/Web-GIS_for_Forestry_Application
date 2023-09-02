@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!-- Openlayers 6.5.0 -->
+	  <script src="v6.15.1/ol.js"></script>
+    <link rel="stylesheet" href="v6.15.1/ol.css" type="text/css">
+
+    <!-- Layer Switcher -->
+    <script src="ol-layerswitcher-master/dist/ol-layerswitcher.js"></script>
+    <link rel="stylesheet" href="ol-layerswitcher-master/dist/ol-layerswitcher.css" type="text/css"/>
+    
+    <!-- Proj4js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>.
+    
+    <!-- JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="F:/Web-GIS/Portofolio/Vendors/bootstrap-5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="F:/Web-GIS/Portofolio/Vendors/boxicons-2.1.4/css/boxicons.min.css">
+
+    <!-- Link GoogleSwiperIcon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <title>Bismillah</title>
+</head>
+<body> 
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg ">
+        <div class="container">
+          <a class="navbar-brand fw-bold" style="font-size: 15px;flex-grow: 50;" href="#"><i class='bx bxs-tree'style="font-size: 25px;color:#5EB800"></i> |  WEB-GIS FOR FORESTY APPLICATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0"  style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%);">
+              <li class="nav-item">
+                <a class="nav-link bx bxl-github" href= 'https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/tree/main' style="font-size: 30px;" target="_blank" onmouseover="showPopup('Github-Popup')" onmouseout="hidePopup('Github-Popup')"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="file:///F:/Web-GIS/Portofolio/Vendors/index.html" target="_blank" onmouseover="showPopup('AboutMe-Popup')" onmouseout="hidePopup('AboutMe-Popup')">
+                  <img src="F:/Web-GIS/Portofolio/Images/My_Profile_v2 - Copy.png" alt="Your Image Alt Text" width="30" height="30">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+    <!-- FEATURES SECTION -->
+    <!-- FEATURES SECTION - SearchEngine: -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Farm ID">
+      <button id="searchButton">Search</button>
+    </div>
+
+
+    <!-- FEATURES SECTION - Basemap: -->
+    <div class="map-feature Basemap">
+      <button class="bx bx-globe map-feature-button" onmouseover="showPopup('Basemap-Popup')" onmouseout="hidePopup('Basemap-Popup')" onclick="togglePopup('basemapOptions')"></button>
+    
+      <!-- Basemap options -->
+      <div class="basemap-options" id="basemapOptions">
+        <h1 style="font-size:15px;weight:bold;">Basemap</h1>
+        <label>
+          <input type="radio" name="basemapOption" value="Streets" checked>
+          <span>Streets</span>
+        </label>
+        <label>
+          <input type="radio" name="basemapOption" value="Satellite">
+          <span>Satellite</span>
+        </label>
+      </div>
+    </div>
+
+    
+    <!-- FEATURES SECTION - Overlays: -->
+    <div class="map-feature Overlays">
+      <button class="bx bxs-layer map-feature-button" onmouseover="showPopup('Overlays-Popup')" onmouseout="hidePopup('Overlays-Popup')" onclick="togglePopup('OverlayOptions')"></button>
+
+      <!-- Layers Option -->
+      <div class="Overlay-options" id="OverlayOptions">
+        <h1 style="font-size:15px;weight:bold;">Base Layers</h1>
+        <label>
+          <input type="radio" name="BaseOptions" value="Elevation">
+          <span>Elevation</span>
+        </label>
+        <label>
+          <input type="radio" name="BaseOptions" value="Hillshade">
+          <span>Hillshade</span>
+        </label>
+        <label>
+          <input type="radio" name="BaseOptions" value="None" checked>
+          <span>None</span>
+        </label>
+      </div>
+
+    </div>
+
+    <!-- Base Layers Legend -->
+    <div id="legend"></div>
+
+    <!-- FEATURES SECTION - Layers: -->
+    <div class="map-feature Layers">
+      <button class="bx bxs-layer-plus map-feature-button" onmouseover="showPopup('Layers-Popup')" onmouseout="hidePopup('Layers-Popup')" onclick="togglePopup('LayerOptions')"></button>
+      
+      <div class="Layer-Options" id="LayerOptions">
+        <h1 style="font-size:15px; font-weight: bold;">Layers</h1>
+        <label class="toggle-switch">
+          <input type="checkbox" class="layer-toggle" value="Landuse" checked>
+          <span class="slider"></span>
+          <span class="layer-label">Landuse</span>
+        </label>  
+        <label class="toggle-switch">
+          <input type="checkbox" class="layer-toggle" value="Incident" checked>
+          <span class="slider"></span>
+          <span class="layer-label">Incident</span>
+        </label>
+      </div>
+      
+    </div>
+
+     <!-- Layers Legend -->
+     <div class="LayersLegend">
+      <div id="LUlegend"></div>
+      <div id="Inclegend"></div>
+    </div>
+   
+
+    <!-- FEATURES SECTION - Calculate: -->
+    <!-- <div class="map-feature Calculate">
+      <button class="bx bx-ruler map-feature-button"></button>
+
+      Area Measurement Icon <box-icon name='hive'></box-icon>
+
+      Line Measurement Icon <box-icon name='trip'></box-icon> 
+    </div> -->
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <!-- SIDEBAR SECTION - Dashboard: -->
+      <div class="icon-row Dashboard">
+          <button id="Dashboard-Icon" class="bx bxs-dashboard icon-row-button" onmouseover="showPopup('Dashboard-Popup')" onmouseout="hidePopup('Dashboard-Popup')" onclick="toggleDashboardUI('Dashboard-UI')"></button>
+      </div>
+      
+      <!-- SIDEBAR SECTION - App -->
+      <div class="icon-row App">
+          <button id="App-Icon" class="bx bx-network-chart icon-row-button" onclick="toggleDashboardUI('App-UI')"></button>
+      </div>
+    </div>
+
+    <!-- POP UP ICON-->
+    <div class="popup-icon">
+      <div class="popup-BUDashboard" id="Dashboard-Popup">BU Dashboard</div>
+      <div class="popup-Basemap" id="Basemap-Popup">Basemap</div>
+      <div class="popup-Overlays" id="Overlays-Popup">Base Layer</div>
+      <div class="popup-Layers" id = "Layers-Popup">Layers</div>
+      <div class="popup-AboutMe" id = "AboutMe-Popup">About Me</div>
+      <div class="popup-Github" id = "Github-Popup">GitHub</div>
+    </div>
+
+    
+    <!-- Dashboard UI -->
+    <div id= "Dashboard-UI" class="Dashboard-UI">
+      <div class="title-section">BU Dashboard</div>
+      <div class="Harvesting">
+        <a id="sub-title">Harvesting Achievement</a>
+        <div class="Harvesting-Container">
+          <canvas id="Harvesting-Chart"></canvas>
+        </div>
+      </div>
+      <div class="Landuse-Incident">
+        <!-- Landuse Chart -->
+        <div class="Landuse">
+          <a id="sub-title">Landuse</a>
+          <div class="Landuse-Container">
+            <canvas id="Landuse-Chart"></canvas>
+          </div>
+        </div>
+        <!-- Fire Chart -->
+        <div class="Incident">
+          <a id="sub-title">Incident</a>
+          <div class="Incident-Container">
+            <canvas id="Incident-Chart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="Sector-Achievement">
+        <a id="sub-title">Rangking of Sector-wise Harvesting Achievement</a>
+        <div class="Sector-Container">
+          <canvas id="Sector-Chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+     <!-- App UI -->
+    <div id= "App-UI" class="App-UI">
+      <div class="title-section">Planting Simulation App</div>
+    </div>
+   
+
+    <!-- MAP -->
+    <div id="map">
+     
+      <!-- Base Map Switcher -->
+      <div id="layer-switcher-container"></div>
+      
+      <!-- Popup Features -->
+      <div id="popup" class="ol-popup">
+          <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+          <div id="popup-content"></div>
+      </div>
+
+      <!-- Infobar -->
+      <div id="info-bar">
+        <div class="section" id="scale_bar"></div>
+        <div class="section" id="tracking-coordinate">
+          <i class='bx bxs-paper-plane' style="font-size: 20px;position: absolute;color: black; bottom:2px;left:-25px"></i>: <span id="coordinates"></span>
+        </div>
+        <div class="section" id="zoom-info">
+          <i class='bx bx-search-alt' style="font-size: 20px;position: absolute;color: black; bottom:2px;left:-25px"></i>: <span id="zoom-level"></span>
+        </div>
+        <div class="section" id="attribution">©MapTiler ©OpenStreetMap</div>
+      </div>
+
+    </div>
+
+    
+    <script src="main.js"></script>
+    
+</body>
+</html>

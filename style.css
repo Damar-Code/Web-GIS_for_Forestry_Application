@@ -1,0 +1,794 @@
+html,
+body{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: arial;
+  font-weight: bold;
+}
+
+#info-bar {
+  padding: 10px;
+  z-index: 2;
+  height: 3.8%;
+  width: 100%;
+  bottom: 0%;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  background-color: rgb(61,61,255, 0.20);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.section {
+  flex: 1; /* Each section will take an equal share of the available space */
+  text-align: center;
+  color: white;
+}
+
+/* Scale Bar ID */
+#scale_bar {
+  position: fixed;
+  z-index: 3;
+  bottom: -7px;
+  left: 4.5%;
+}
+
+#tracking-coordinate {
+  position: fixed;
+  z-index: 3;
+  bottom: 0px;
+  left: 58%;
+  color: black;
+}
+
+#zoom-info {
+  position: fixed;
+  z-index: 3;
+  bottom: 0px;
+  left: 78%;
+  color: black;
+}
+
+#attribution {
+  position: fixed;
+  z-index: 3;
+  bottom: 0px;
+  left: 85%;
+  color: black;
+}
+
+/* POPUP STYLE ELEMENT */
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  padding: 7px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -50px;
+  min-width: 200px;
+}
+
+.popup-header {
+  font-size: 17px; /* Adjust the font size as needed */
+  font-weight: bold; /* Apply desired font weight */
+  color: white; /* Apply desired text color */
+  /* Add more styling properties as needed */
+  margin-bottom: 20px;
+  background-color: #007bff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  padding: 5px;
+  height: 30px;
+}
+.popup-contet {
+  font-size: 15px; /* Adjust the font size as needed */
+  font-weight: normal; /* Apply desired font weight */
+  color: #333; /* Apply desired text color */
+  margin-top: -15px; /* Adjust the value as needed to remove the space */
+}
+
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+.ol-popup-closer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.ol-popup-closer:after {
+  content: "✖";
+} 
+
+#map{
+  position: absolute;
+  width: 100%;
+  top:0px;
+  bottom:0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  z-index: 1;
+}
+
+.navbar {
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  left: 0px;
+  right: 0px;
+  height: 45px;
+  width: 100%;
+  background-color: rgba(255,255,255); /* Adjust the background color and transparency as needed */
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect: horizontal offset, vertical offset, blur radius, and color */
+}
+
+/* Center the navbar brand text */
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Adjust the spacing between the brand text and the icons */
+.navbar-nav {
+  margin-right: auto;
+}
+
+/* SIDEPANEL */
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  height: 100%;
+  top: 6%;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.2s;
+  padding-top: 60px;
+  box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.sidepanel a {
+  z-index: 3;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.1s;
+}
+
+.sidepanel .closebtn{
+
+  border-radius: 10px 0px 0px 10px;
+  border: none;
+  bottom:7%;
+
+  width: 25px;
+  height:50px;
+
+  right:0%;
+  z-index: 3;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  background-color:#B2E700;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5);
+}
+
+.open .openbtn {
+ z-index: 2;
+ width: 35px;
+ height:90px;
+ border-radius: 0px 10px 10px 0;
+ position: absolute;
+ top: 50%;
+ z-index:2;
+ box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.5); 
+}
+
+.openbtn {
+  left:-5px;
+  bottom: 40%;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #B2E700;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:#5EB800;
+}
+
+.sidepanel .closebtn:hover {
+  background-color:#5EB800;
+}
+
+/* BASEMAP OPTION */
+/* Shared styles for map feature buttons */
+.map-feature {
+  font-size: 25px;
+  z-index: 3;
+  position: absolute;
+  right: 1%;
+}
+
+.Basemap {
+  bottom: 70%; /* Adjust the vertical position for the Basemap button */
+}
+
+.Layers {
+  bottom: 62%; /* Adjust the vertical position for the Measurement button */
+}
+
+.Overlays {
+  bottom: 54%; /* Adjust the vertical position for the Measurement button */
+}
+
+.map-feature-button {
+  height: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* BASEMAP PANEL */
+/* Style the bounding box for basemap options */
+.basemap-options {
+  display: none;
+  position: absolute;
+  
+  right: 40px; /* Adjust the horizontal position as needed */
+  bottom: 45%; /* Adjust the vertical position as needed */
+  z-index: 4;
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  border-radius: 5px; /*distenfromicon*/
+  padding: 5px;
+  width:50px;
+  font-size: 10px;
+}
+
+/* Style each radio button option */
+/* Arrange the label contents using grid layout */
+/* The same CSS for map-feature-button and basemap-options you provided earlier... */
+
+/* Arrange the label contents using flexbox */
+.basemap-options label {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.basemap-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Make the bounding box bigger */
+.basemap-options {
+  min-width: 100px; /* Adjust the minimum width as needed */
+}
+
+/* Show the basemap options when open */
+.basemap-options.active {
+  display: block;
+}
+
+/* OVERLAYS */
+.Overlay-options {
+  display: none;
+  position: absolute;
+  
+  right: 40px; /* Adjust the horizontal position as needed */
+  bottom: 45%; /* Adjust the vertical position as needed */
+  z-index: 4;
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  border-radius: 5px; /*distenfromicon*/
+  padding: 5px;
+  width:50px;
+  font-size: 10px;
+}
+
+/* Arrange the label contents using flexbox */
+.Overlay-options label {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Overlay-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Make the bounding box bigger */
+.Overlay-options {
+  min-width: 100px; /* Adjust the minimum width as needed */
+}
+
+/* Show the basemap options when open */
+.Overlay-options.active {
+  display: block;
+}
+
+/* LAYERS */
+.Layer-Options {
+  display: none;
+  position: absolute;
+  
+  right: 40px; /* Adjust the horizontal position as needed */
+  bottom: 45%; /* Adjust the vertical position as needed */
+  z-index: 4;
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  border-radius: 5px; /*distenfromicon*/
+  padding: 5px;
+  width:130px;
+  font-size: 10px;
+}
+
+/* Arrange the label contents using flexbox */
+.Layer-Options label {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.Layer-Options input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Make the bounding box bigger */
+.Layer-Options {
+  min-width: 100px; /* Adjust the minimum width as needed */
+}
+
+/* Show the basemap options when open */
+.Layer-Options.active {
+  display: block;
+}
+
+.sidebar{
+  left:0%;
+  height:96.3%;
+  position: absolute;
+  width:4.5%;
+  background-color: white;
+  z-index: 3;
+  
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5); 
+  padding-top: 60px;
+}
+
+
+/* SIDEBAR OPTION */
+.icon-row {
+  padding-top:35%;
+  font-size: 25px;
+  z-index: 1;
+  position: absolute;
+  margin-bottom: 15px;
+}
+
+.Dashboard{
+  top:3%;
+  left:19%
+}
+
+.App{
+  top:12%;
+  left:19%
+}
+
+
+.icon-row-button {
+  width: 40;
+  height: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Dasboard UI */
+.Dashboard-UI {
+  left: -60%; /* Initial position off-screen to the left */
+  top: 45px;
+  width: 60%; /* Set the desired width */
+  height: 93.1%;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  padding: 10px; /* Add padding to create margin inside */
+  transition: left 0.3s ease; /* Smooth transition animation */
+}
+
+/* Display the Dashboard UI */
+.Dashboard-UI.visible {
+  left: 4.5%; /* Position it to the desired location */
+}
+
+
+.App-UI {
+  left: -30%; /* Initial position off-screen to the left */
+  top: 45px;
+  width: 30%; /* Set the desired width */
+  height: 93.1%;
+  background-color: white;
+  z-index: 2;
+  position: absolute;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  padding: 10px; /* Add padding to create margin inside */
+  transition: left 0.3s ease; /* Smooth transition animation */
+}
+
+/* Display the Dashboard UI */
+.App-UI.visible {
+  left: 4.5%; /* Position it to the desired location */
+}
+
+
+/* SearchEngine */
+.search-container {
+  bottom: 85%; 
+  z-index: 2;
+  position: absolute;
+  right: 1%;
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#searchButton {
+  padding: 5px 10px;
+  background-color: #5EB800;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* SIDEBAR TITLE */
+.title-section{
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-bottom: 5px;
+}
+
+/* DASBOARD SECTION */
+.Harvesting {
+  width: 100%;
+  height: 230px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);  
+  text-align: center;
+  padding: 10px;
+}
+
+.Landuse-Incident {
+  margin-top: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Landuse {
+  width: 34%;
+  padding: 10px;
+  height: 165px;
+  text-align: center;
+  border: none;
+  background-color:white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Incident {
+  margin-left: 8px;
+  width: 65%;
+  padding: 10px;
+  height: 165px;
+  text-align: center;
+  border: none;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Sector-Achievement {
+  text-align: center;
+  padding: 10px;
+  margin-top: 8px;
+  width: 100%;
+  height: 135px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.Harvesting-Container {
+  /* Make sure the chart container fills the available space */
+  width: 100%;
+  height: 90%;
+}
+
+.Landuse-Container {
+  /* Make sure the chart container fills the available space */
+  width: 100%;
+  height: 90%;
+}
+
+.Incident-Container {
+  /* Make sure the chart container fills the available space */
+  width: 100%;
+  height: 90%;
+}
+
+.Sector-Container {
+  /* Make sure the chart container fills the available space */
+  width: 100%;
+  height: 90%;
+}
+
+#sub-title{
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* POP UP ICON INFO */
+.popup-BUDashboard {
+  display: none;
+  position: absolute;
+  background-color:  #007bff; /* rgb(61,61,255, 0.20); */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  left: 5%;
+  top: 13%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+.popup-Basemap {
+  display: none;
+  position: absolute;
+  background-color:  #007bff; /* rgb(61,61,255, 0.20); */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  right: 4.5%;
+  top: 27%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+.popup-Overlays {
+  display: none;
+  position: absolute;
+  background-color:  #007bff; /* rgb(61,61,255, 0.20); */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  right: 4.5%;
+  top: 43%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+.popup-Layers {
+  display: none;
+  position: absolute;
+  background-color:  #007bff; /* rgb(61,61,255, 0.20); */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  right: 4.5%;
+  top: 35%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+.popup-AboutMe {
+  display: none;
+  position: absolute;
+  background-color:  #007bff;; /* rgb(61,61,255, 0.20); */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  right: 1%;
+  top: 10.5%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+.popup-Github {
+  display: none;
+  position: absolute;
+  background-color:  #007bff;; /* rgb(61,61,255, 0.20); */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  right: 4%;
+  top: 10.5%;
+  transform: translateY(-50%);
+  z-index: 3;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+
+/* Add this CSS to style the legend container */
+#legend {
+  position: absolute;
+ 
+  bottom: 30px;
+  right: 15px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.LayersLegend{
+  position: absolute;
+  height: 160px;
+  width: 135px;
+ 
+  bottom: 170px;
+  right: 15px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+      
+
+.LayersLegend #LUlegend{
+  position: absolute;
+  bottom: 2px;
+  right: 6px;
+  z-index: 3;
+}
+
+.LayersLegend #Inclegend{
+  position: absolute;
+  bottom: 75px;
+  right: 6px;
+  z-index: 3;
+}
+
+
+/* ERROR POPUP */
+.error-popup {
+  display: none;
+  position: absolute;
+  background-color: #ff9999;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  right:15px;
+  top:50px;
+  z-index: 5;
+}
+
+/* Lyers Toogle Switcher */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 15px;
+}
+
+.toggle-switch .layer-toggle {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Adjust the styles as needed for your UI */
+.layer-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50px;
+  color: #000;
+}
