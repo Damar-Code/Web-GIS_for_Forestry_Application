@@ -38,7 +38,7 @@ https://github.com/Damar-Code/Web-GIS_for_Forestry_Application/assets/60123331/6
 4. Incident Line Chart
    - Inform the total of monthly Incident cases i.e Fire, Flood, and Fatalities.
    - The value shown is from Incident layer extraction using $.getJSON query of ImageWMS from Geoserver.
-5. Bar Chart Rangking of Sector-wise Harvesting Achievement
+5. Bar Chart Ranking of Sector-wise Harvesting Achievement
    - Inform the total yield of sector's harvesting and its ranking compared to the rest of sector.  
    - The value shown is from Landuse layer extraction using $.getJSON query of ImageWMS from Geoserver.
 
